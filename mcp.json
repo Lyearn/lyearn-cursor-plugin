@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "lyearn": {
+      "url": "https://api.use1.lyearn.com/productivity/mcp"
+    }
+  }
+}
