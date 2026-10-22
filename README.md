@@ -28,8 +28,6 @@ Cursor discovers the server's OAuth endpoints and opens Lyearn's sign-in page. I
 
 Disconnect from **Profile → Connected AI apps**. An admin can also remove connections from **Settings → Manage → AI app connections**.
 
-The Lyearn edge has to allow member sign-in and public clients (`MCP_OAUTH_MEMBER_SIGN_IN` and `MCP_OAUTH_REGISTERED_CLIENTS`). With either of those off, Cursor cannot finish sign-in.
-
 ## Configuration
 
 `mcp.json` is the only configuration:
@@ -59,14 +57,6 @@ Ask for a person, a record, or a report the way you would in Lyearn. If a result
 ## Troubleshooting
 
 **The server is not listed.** Reload the window. For a local install, confirm the copy is at `~/.cursor/plugins/local/lyearn` and is a real directory. Check that no marketplace plugin named `lyearn` is installed, and that Enterprise local plugin imports are allowed.
-
-**Connect asks you to sign in again, or stays on needs authentication.** Finish the browser sign-in. If the page never comes back to Cursor, the edge is not accepting Cursor's redirect. It must allow `https://www.cursor.com/agents/mcp/oauth/callback` and `http://localhost:8787/callback`.
-
-**Sign-in says the redirect is not allowed, or asks for a client id.** Member sign-in or public clients are off on that edge. Both `MCP_OAUTH_MEMBER_SIGN_IN` and `MCP_OAUTH_REGISTERED_CLIENTS` must be `true`.
-
-**A tool you expect is missing.** The connection only includes the scopes you approved, and Lyearn still applies your own permissions. Approve the scope again, or ask an admin if your role cannot see that data. Compensation is separate and stays off until you opt in.
-
-**An org change did not go live.** That is expected. `org_create_draft` saves a draft for review in Lyearn.
 
 ## License
 
